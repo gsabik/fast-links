@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import { LinksProvider } from "@/context/LinksContext";
 
 export const metadata: Metadata = {
   title: "Fastlinks",
@@ -21,10 +22,12 @@ export const RootLayout = ({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<header>
-						<NavBar/>
-					</header>
-					{children}
+					<LinksProvider>
+						<header>
+							<NavBar/>
+						</header>
+						{children}
+					</LinksProvider>
 				</ThemeProvider>
 			</body>
     </html>
