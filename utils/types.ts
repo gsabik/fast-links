@@ -7,4 +7,5 @@ export interface Link {
 export type LinksContextType = {
   links: Link[];
   addLink: (link: Link) => void;
+	deleteLink: (id: string) => void;
 }

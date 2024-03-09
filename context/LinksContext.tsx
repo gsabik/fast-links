@@ -16,10 +16,15 @@ export const LinksProvider = ({ children }: Props) => {
 		setLinks([...links, link]);
 	}
 
+	const deleteLink = (id: string) => {
+		setLinks(links.filter(link => link.id !== id));
+	}
+
 	return (
 		<LinksContext.Provider value={{ 
 			links,
-			addLink
+			addLink,
+			deleteLink
 		 }}>{children}
 		 </LinksContext.Provider>
 	);
