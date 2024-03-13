@@ -8,4 +8,5 @@ export type LinksContextType = {
   links: Link[];
   addLink: (link: Link) => void;
 	deleteLink: (id: string) => void;
+	updateLink: (id: string, newValue: Link) => void;
 }

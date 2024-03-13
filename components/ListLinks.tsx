@@ -18,7 +18,7 @@ const ListLinks = () => {
 					<p className="font-medium text-center">No agregaste ningún Fastlink!</p>
 					:
 					links.map((link: Link) => (
-						<ItemLink key={link.id} {...link}/>
+						<ItemLink key={link.id} link={link}/>
 					))
 				}
 			</CardContent>

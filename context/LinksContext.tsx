@@ -2,7 +2,6 @@
 
 import { createContext, ReactNode, useState } from "react";
 import { Link, LinksContextType } from "@/utils/types";
-
 interface Props {
 	children: ReactNode
 }
@@ -20,11 +19,16 @@ export const LinksProvider = ({ children }: Props) => {
 		setLinks(links.filter(link => link.id !== id));
 	}
 
+	const updateLink = (id: string, newValue: Link) => {
+		setLinks((links.map(link => link.id === id ? newValue : link)));
+	}
+
 	return (
 		<LinksContext.Provider value={{ 
 			links,
 			addLink,
-			deleteLink
+			deleteLink,
+			updateLink
 		 }}>{children}
 		 </LinksContext.Provider>
 	);
