@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import NavBar from "@/components/NavBar";
-import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { LinksProvider } from "@/context/LinksContext";
+import { Toaster } from "@/components/ui/toaster";
+import NavBar from "@/components/NavBar";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Fastlinks",
@@ -27,6 +28,7 @@ export const RootLayout = ({
 							<NavBar/>
 						</header>
 						{children}
+						<Toaster/>
 					</LinksProvider>
 				</ThemeProvider>
 			</body>
