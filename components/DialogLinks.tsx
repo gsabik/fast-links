@@ -21,6 +21,7 @@ interface Props {
 }
 
 const DialogLinks = ({ link }: Props) => {
+	const [open, setOpen] = useState(false);
 	const [editLink, setEditLink] = useState<Link>({
 		id: link.id,
 		description: link.description,
@@ -39,10 +40,11 @@ const DialogLinks = ({ link }: Props) => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		updateLink(link.id, editLink);
+		setOpen(false);
 	}
 
 	return (
-		<Dialog>
+		<Dialog open={open} onOpenChange={setOpen}>
 			<DialogTrigger asChild>
 					<Button size="icon" variant="outline">
 						<Pencil className="h-4 w-4"/>
@@ -68,7 +70,7 @@ const DialogLinks = ({ link }: Props) => {
 						value={editLink.url}
 					/>
 					<DialogClose asChild>
-						<Button onClick={handleSubmit} type="submit">Actualizar</Button>
+						<Button onClick={handleSubmit} type="button">Actualizar</Button>
 					</DialogClose>
 				</form>
       </DialogContent>
