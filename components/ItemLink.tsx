@@ -23,7 +23,7 @@ const ItemLink = ({ link }: Props) => {
 			<div className="flex flex-row items-center justify-between">
 				<p>{link.description}</p>
 				<div className="flex flex-row space-x-2">
-					<Button size="icon" variant="outline" onClick={copyToClipboard}>
+					<Button onClick={copyToClipboard} size="icon" variant="outline">
 						<Copy className="h-4 w-4"/>
 					</Button>
 					<Button onClick={() => deleteLink(link.id)} size="icon" variant="outline">
