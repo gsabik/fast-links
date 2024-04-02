@@ -25,7 +25,7 @@ const DialogInformation = () => {
 					</p>
 					<br/>
 					<p>
-						Desde mi punto de vista, un proyecto no se debería valorar solo por la calidad o complejidad del código, o que tan atractivo se a nivel diseño, si no
+						Desde mi punto de vista, un proyecto no se debería valorar solo por la calidad o complejidad del código, o que tan atractivo sea a nivel diseño, si no
 						que también pueda solucionar un problema o facilitar un requerimiento.
 					</p>
 				</DialogDescription>
